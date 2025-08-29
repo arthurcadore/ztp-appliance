@@ -1,0 +1,4 @@
+[submodule "share"]
+	path = share
+	url = https://github.com/arthurcadore/comware-configs
+	branch = main

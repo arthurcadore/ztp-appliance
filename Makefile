@@ -5,8 +5,11 @@ stop:
 
 start: build
 	docker compose up &
+
+submodules:
+	git submodule update --init --recursive
 	
-build:
+build: submodules
 	docker compose build --no-cache
 
 commit: build
