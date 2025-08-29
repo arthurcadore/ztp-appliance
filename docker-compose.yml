@@ -3,9 +3,6 @@ services:
   dhcpserver:
     container_name: dhcpserver
     image: arthurcadore/my-dhcpserver:1.0.0
-    build:
-      context: .
-      dockerfile: ./docker/Dockerfile-DHCP
     restart: unless-stopped
     network_mode: "host"
     cap_add:
@@ -25,9 +22,6 @@ services:
   tftpserver:
     container_name: tftpserver
     image: arthurcadore/my-tftpserver:1.0.0
-    build:
-      context: .
-      dockerfile: ./docker/Dockerfile-TFTP
     restart: unless-stopped
     network_mode: "host"
     volumes:
