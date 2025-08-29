@@ -1,0 +1,19 @@
+# Dockerfile: Defines container specifications to startup and run.
+# Author: Arthur Cadore M. Barcella
+# Github: arthurcadore
+
+FROM networkboot/dhcpd:1.3.0
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    net-tools \
+    supervisor \
+    && rm -rf /var/lib/apt/lists/* 
+
+RUN touch /var/lib/dhcp/dhcpd.leases \
+    && chown root:root /var/lib/dhcp/dhcpd.leases \
+    && chmod 664 /var/lib/dhcp/dhcpd.leases
+
+# Copia configuração do supervisord
+COPY docker/supervisord-DHCP.conf /etc/supervisord.conf
+
+CMD ["supervisord", "-c", "/etc/supervisord.conf"]

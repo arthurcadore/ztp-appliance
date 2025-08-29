@@ -1,0 +1,40 @@
+services:
+  # DHCP server service:
+  dhcpserver:
+    container_name: dhcpserver
+    image: arthurcadore/my-dhcpserver:1.0.0
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile-DHCP
+    restart: unless-stopped
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./logs/:/var/lib/dhcp/"
+      - "./config/dhcpd.conf:/etc/dhcp/dhcpd.conf"
+      - "./config/dhcpd6.conf:/etc/dhcp/dhcpd6.conf"
+    healthcheck:
+      test: ["CMD-SHELL", "pidof dhcpd > /dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # TFTP server service:
+  tftpserver:
+    container_name: tftpserver
+    image: arthurcadore/my-tftpserver:1.0.0
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile-TFTP
+    restart: unless-stopped
+    network_mode: "host"
+    volumes:
+      - "./share:/tftpshare"
+    healthcheck:
+      test: ["CMD-SHELL", "echo 'get .gitkeep' | tftp 127.0.0.1 69 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
