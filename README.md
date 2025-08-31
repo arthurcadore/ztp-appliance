@@ -14,4 +14,4 @@ O ZTP Appliance inclui dois serviços principais:
 - **TFTP Server**  
   Fornece os arquivos de configuração e imagens necessárias para inicialização/provisionamento dos clientes.  
 
-Essa combinação é usada em ambientes de rede para **boot remoto, configuração automática e inicialização sem intervenção manual**.
+Essa combinação é usada em ambientes de rede para **boot remoto, configuração automática e inicialização sem intervenção manual**.](https://github.com/arthurcadore/ztp-appliance/tree/main)](https://github.com/arthurcadore/ztp-appliance/tree/main)](https://github.com/arthurcadore/ztp-appliance/tree/main)](https://github.com/arthurcadore/ztp-appliance/tree/main)
