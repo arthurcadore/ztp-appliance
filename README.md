@@ -1,17 +1,17 @@
 # Zero Touch Provisioning Appliance
 
-Este projeto fornece uma **appliance de Zero Touch Provisioning (ZTP)** baseada em **Docker Compose**, que combina **servidores DHCP e TFTP** para automatizar o provisionamento de dispositivos em rede.  
+This project provides a Zero Touch Provisioning (ZTP) appliance based on Docker Compose, which combines DHCP and TFTP servers to automate the provisioning of networked devices.
 
 ---
 
-## Visão Geral
+## Overview
 
-O ZTP Appliance inclui dois serviços principais:
+The ZTP Appliance includes two main services:
 
-- **DHCP Server**  
-  Responsável por atribuir endereços IP aos dispositivos clientes e indicar a localização do servidor TFTP.  
+- DHCP Server
+Responsible for assigning IP addresses to client devices and indicating the location of the TFTP server.
 
-- **TFTP Server**  
-  Fornece os arquivos de configuração e imagens necessárias para inicialização/provisionamento dos clientes.  
+- TFTP Server
+Provides the configuration files and images required for client booting/provisioning.
 
-Essa combinação é usada em ambientes de rede para **boot remoto, configuração automática e inicialização sem intervenção manual**.](https://github.com/arthurcadore/ztp-appliance/tree/main)](https://github.com/arthurcadore/ztp-appliance/tree/main)](https://github.com/arthurcadore/ztp-appliance/tree/main)](https://github.com/arthurcadore/ztp-appliance/tree/main)
+This combination is used in network environments for remote boot, automatic configuration, and hands-free booting.
